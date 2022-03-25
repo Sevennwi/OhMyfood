@@ -1,0 +1,95 @@
+/* footer */
+
+footer {
+    background-color: rgba(29, 29, 29, 0.781);
+    color: white;
+    padding: 1px 0px;
+
+    @include ordi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    h2{
+        text-align: left;
+        margin-left: 10%; 
+        @include ordi {
+            margin: 0;
+        }
+
+        @include tablet {
+            margin: 0;
+        }
+
+        @include police 
+    }
+    
+    p {
+        text-align: left;
+        margin-left: 10%; 
+
+        @include ordi {
+            margin: 10px 0px;
+        }
+
+        @include tablet {
+            margin: 10px 0px;
+        }
+    }
+
+    p span {
+        margin-right: 15px;
+        #rotate {
+            transform: rotate(-40deg);
+            width: 13.5px;
+        }
+    }
+}
+
+/* Animation coeur*/
+
+
+.hover-effect:before{
+	content:"\f004";
+    font-weight: 200;
+}
+
+.hover-effect:hover:before{
+	content:"\f004";
+    font-weight: 900;
+    animation: heart 0.5s ease-in both;
+    background: linear-gradient($third-color, $second-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes heart {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        background: linear-gradient($third-color, $second-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+    }
+}

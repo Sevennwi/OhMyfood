@@ -1,0 +1,68 @@
+$primary-color: #f2f2f2;
+$second-color: #9356DC;
+$third-color: #FF79DA;
+$fourth-color: #99E2D0;
+
+$delay:200ms;
+
+/* Police */
+
+
+@mixin police {
+    font-family: Shrikhand, Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+@mixin ordiMenu {
+    @media all and (min-width: 1100px){
+        @content;
+    }
+}
+
+@mixin ordiXL {
+    @media all and (min-width: 1751px){
+        @content;
+    }
+}
+
+@mixin ordiL {
+    @media all and (min-width: 1501px) and (max-width:1750px){
+        @content;
+    }
+}
+
+@mixin ordi {
+    @media all and (min-width: 1201px) and (max-width:1500px){
+        @content;
+    }
+}
+
+
+@mixin laptop {
+    @media all and (min-width: 1000px) and (max-width:1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media all and (min-width: 700px) {
+        @content;
+    }
+}
+
+@mixin tabletHome {
+    @media all and (max-width: 770px) {
+        @content;
+    }
+}
+
+@mixin mobileX {
+    @media all and (max-width: 400px) {
+        @content;
+    }
+}

@@ -1,0 +1,337 @@
+@import "utils/variables";
+
+h1 {
+  @include police;
+  text-align: center;
+  height: 30px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  span {
+    position: relative;
+    right: 20%;
+  }
+}
+
+/*Section*/
+
+section {
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: flex;
+    border-radius: 0px 0px -40px -40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cards {
+    background-color: $primary-color;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    padding: 0px 0px 40px;
+    border-radius: 40px 40px 15px 15px;
+    position: relative;
+    z-index: 2;
+
+    @include ordi {
+      width: 60%;
+      transform: translateX(33%);
+    }
+
+    @include tablet {
+      width: 70%;
+      transform: translateX(23%);
+    }
+
+    @include mobileX {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      @include police;
+
+      span {
+        margin-left: 90px;
+      }
+    }
+
+    h3 {
+      display: block;
+      width: 80%;
+      text-align: left;
+      margin-left: -30px;
+      text-transform: uppercase;
+      font-weight: normal;
+
+      @include ordi {
+        text-align: center;
+        margin: 20px 0px;
+      }
+
+      @include tablet {
+        text-align: center;
+        margin: 20px 0px;
+      }
+    }
+
+    h3:before {
+      content: "";
+      position: absolute;
+      height: 25px;
+      width: 12%;
+      border-bottom: 4px solid $fourth-color;
+
+      @include ordiMenu {
+        left: 44%;
+      }
+    }
+
+    &_card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 90%;
+      height: 90px;
+      background-color: white;
+      border-radius: 20px;
+      margin: 10px 0px;
+      overflow: hidden;
+      animation: menu-anim 400ms both;
+      animation-timing-function: ease-in-out;
+
+      &:hover > .cards_card_icon {
+        transform: scaleX(1);
+      }
+
+      &:hover span {
+        animation: spin 500ms linear;
+      }
+
+      &:hover .cards_card_text_description {
+        width: 230px;
+
+        @include ordiXL {
+          width: 450px;
+        }
+
+        @include ordiL {
+          width: 350px;
+        }
+
+        @include ordi {
+          width: 280px;
+        }
+
+        @include mobileX {
+          width: 200px;
+        }
+      }
+
+      &:hover h4 {
+        width: 230px;
+        @include ordi {
+          width: 280px;
+        }
+
+        @include mobileX {
+          width: 200px;
+        }
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      &:nth-child(5) {
+        animation-delay: 1s;
+      }
+      &:nth-child(6) {
+        animation-delay: 1.2s;
+      }
+      &:nth-child(7) {
+        animation-delay: 1.4s;
+      }
+      &:nth-child(8) {
+        animation-delay: 1.6s;
+      }
+      &:nth-child(9) {
+        animation-delay: 1.8s;
+      }
+      &:nth-child(10) {
+        animation-delay: 2s;
+      }
+      &:nth-child(11) {
+        animation-delay: 2.2s;
+      }
+      &:nth-child(12) {
+        animation-delay: 2.4s;
+      }
+      &:nth-child(13) {
+        animation-delay: 2.6s;
+      }
+      &:nth-child(14) {
+        animation-delay: 2.8s;
+      }
+
+      @include ordi {
+        justify-content: space-between;
+        width: 50%;
+      }
+
+      @include tablet {
+        justify-content: space-between;
+        width: 70%;
+      }
+
+      &_text {
+        margin-left: 20px;
+        display: block;
+        flex-direction: column;
+
+        h4 {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-height: 380px;
+          width: 300px;
+          transition: width 500ms;
+
+          @include ordi {
+            width: 350px;
+          }
+
+          @include mobileX {
+            width: 250px;
+          }
+        }
+        &_description {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-height: 380px;
+          width: 300px;
+          transition: width 500ms;
+
+          @include ordiXL {
+            width: 580px;
+          }
+
+          @include ordiL {
+            width: 500px;
+          }
+
+          @include ordi {
+            width: 350px;
+          }
+
+          @include mobileX {
+            width: 250px;
+          }
+        }
+
+        :first-child {
+          margin-bottom: -2px;
+        }
+      }
+
+      &_prix {
+        display: flex;
+        align-items: flex-end;
+        font-weight: bold;
+        position: relative;
+        left: 10px;
+
+        @include ordiXL {
+          left: 17%;
+        }
+
+        @include ordiL {
+          left: 15%;
+        }
+
+        @include ordi {
+          left: 17%;
+        }
+
+        @include laptop {
+          left: 70px;
+        }
+
+        @include mobileX {
+          left: 5px;
+        }
+      }
+
+      &_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: $fourth-color;
+        border-radius: 0px 20px 20px 0px;
+        min-width: 70px;
+        height: 90px;
+        transform: scaleX(0);
+        transition: transform 500ms;
+        transform-origin: right;
+      }
+    }
+
+    &_button {
+      border: none;
+      border-radius: 30px;
+      margin: 20px 0px 0px;
+      background: linear-gradient($third-color, $second-color);
+      width: 180px;
+      height: 40px;
+      color: white;
+      box-shadow: -3px 3px 5px lightgray;
+      &:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+        background: linear-gradient(
+          lighten($third-color, 5),
+          lighten($second-color, 5)
+        );
+      }
+    }
+  }
+}
+
+.hover-effect {
+  display: inline;
+  font-size: 1em;
+  color: rgb(36, 36, 36);
+}
+
+@keyframes menu-anim {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@import "layouts/form";
