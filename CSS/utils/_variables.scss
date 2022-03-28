@@ -61,6 +61,12 @@ body {
     }
 }
 
+@mixin mobileHome {
+    @media all and (max-width: 550px) {
+        @content;
+    }
+}
+
 @mixin mobileX {
     @media all and (max-width: 400px) {
         @content;

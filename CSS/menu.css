@@ -52,7 +52,6 @@ section .cards {
       -ms-flex-align: center;
           align-items: center;
   margin-top: -40px;
-  margin-bottom: 20px;
   padding: 0px 0px 40px;
   border-radius: 40px 40px 15px 15px;
   position: relative;
@@ -83,6 +82,7 @@ section .cards {
 
 section .cards h2 {
   font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: 2em;
 }
 
 section .cards h2 span {
@@ -495,7 +495,7 @@ section .cards_button:hover {
 footer {
   background-color: rgba(29, 29, 29, 0.781);
   color: white;
-  padding: 1px 0px;
+  padding: 30px 0 10px;
 }
 
 @media all and (min-width: 1201px) and (max-width: 1500px) {
@@ -540,6 +540,7 @@ footer a:hover {
 footer h2 {
   text-align: left;
   margin-left: 10%;
+  font-size: 1.5em;
   font-family: Shrikhand, Arial, Helvetica, sans-serif;
 }
 
@@ -558,6 +559,7 @@ footer h2 {
 footer p {
   text-align: left;
   margin-left: 10%;
+  font-size: 1.1em;
 }
 
 @media all and (min-width: 1201px) and (max-width: 1500px) {

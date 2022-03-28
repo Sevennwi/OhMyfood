@@ -3,7 +3,7 @@
 footer {
     background-color: rgba(29, 29, 29, 0.781);
     color: white;
-    padding: 1px 0px;
+    padding: 30px 0 10px;
 
     @include ordi {
         display: flex;
@@ -29,6 +29,7 @@ footer {
     h2{
         text-align: left;
         margin-left: 10%; 
+        font-size: 1.5em;
         @include ordi {
             margin: 0;
         }
@@ -42,7 +43,8 @@ footer {
     
     p {
         text-align: left;
-        margin-left: 10%; 
+        margin-left: 10%;
+        font-size: 1.1em; 
 
         @include ordi {
             margin: 10px 0px;

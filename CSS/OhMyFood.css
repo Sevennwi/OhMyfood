@@ -106,6 +106,10 @@ body {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* En tête */
 header {
   width: 100%;
@@ -118,42 +122,47 @@ header h1 {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  z-index: 5;
   color: white;
   background-color: #222;
   padding: 10px;
   border-radius: 15px;
+  font-size: 3em;
   font-family: Shrikhand, Arial, Helvetica, sans-serif;
 }
 
 header .reserver {
-  background: url(/Images/pexels-elevate-1267320.jpg) no-repeat 20% 40%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url(/Images/pexels-elevate-1267320.jpg) no-repeat 20% 40%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/Images/pexels-elevate-1267320.jpg) no-repeat 20% 40%;
   background-size: cover;
   border-radius: 0 0 5px 5px;
   padding: 10px 26px 40px;
-  height: 600px;
+  height: 100vh;
+  position: relative;
 }
 
-header .reserver div {
+header .reserver .reserver-menu {
   background-color: rgba(34, 34, 34, 0.8);
-  max-width: 600px;
+  max-width: 550px;
   border-radius: 15px;
-  margin: 300px auto 0;
+  margin: 550px auto 0;
   padding: 5px 30px 15px;
 }
 
-header .reserver div h2 {
-  font-size: 1.5em;
+header .reserver .reserver-menu h2 {
+  font-size: 1.8em;
   padding: 0px 41px;
   color: white;
 }
 
-header .reserver div button {
+header .reserver .reserver-menu button {
   border: none;
   border-radius: 30px;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
-  width: 200px;
-  height: 40px;
+  font-size: 1.1em;
+  width: 250px;
+  height: 50px;
   color: white;
   -webkit-box-shadow: -3px 3px 5px #202020;
           box-shadow: -3px 3px 5px #202020;
@@ -161,21 +170,55 @@ header .reserver div button {
   z-index: 1;
 }
 
-header .reserver div button:hover {
+header .reserver .reserver-menu button:hover {
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   background: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#a16be0));
   background: linear-gradient(#ff93e1, #a16be0);
 }
 
-header .reserver div button a {
+header .reserver .reserver-menu button a {
   text-decoration: none;
   color: inherit;
 }
 
-header .reserver div p {
+header .reserver .reserver-menu p {
   color: white;
-  font-size: 1.1em;
+  font-size: 1.3em;
+}
+
+header .reserver .custom-shape-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+header .reserver .custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+@media all and (max-width: 770px) {
+  header .reserver .custom-shape-divider-bottom svg {
+    height: 100px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  header .reserver .custom-shape-divider-bottom svg {
+    height: 70px;
+  }
+}
+
+header .reserver .custom-shape-divider-bottom .shape-fill {
+  fill: #ffffff;
 }
 
 /* Section */
@@ -184,197 +227,139 @@ section {
 }
 
 section h2 {
-  text-align: left;
+  text-align: center;
   margin-left: 5%;
-  margin-top: 40px;
+  margin: 50px 0px;
   font-size: 2em;
 }
 
-@media all and (min-width: 1100px) {
+@media all and (max-width: 550px) {
   section h2 {
     text-align: center;
-    margin: 20px 0px;
   }
 }
 
-section ul {
-  list-style-type: decimal;
-  counter-reset: number;
+section .list-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0 70px;
+}
+
+@media all and (max-width: 550px) {
+  section .list-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 70px;
+  }
+}
+
+section .list-container .number-container {
+  margin: 0 40px;
+}
+
+@media all and (max-width: 550px) {
+  section .list-container .number-container {
+    margin: auto;
+  }
+}
+
+section .list-container .number-container .number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 3em;
+  color: #9356DC;
+  margin-bottom: 0px;
+}
+
+section .list-container .number-container h3 {
+  text-align: left;
+  font-size: 1.5em;
+}
+
+section .list-container .number-container p {
+  text-align: left;
+  max-width: 300px;
+  font-size: 1.2em;
+}
+
+section .cards-container {
+  max-width: 100%;
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+section .cards-container .custom-shape-divider-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+section .cards-container .custom-shape-divider-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+section .cards-container .custom-shape-divider-top .shape-fill {
+  fill: #ffffff;
+}
+
+section .cards-container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px 0px 40px -20px;
+  padding-bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
 }
 
-@media all and (min-width: 1100px) {
-  section ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+@media all and (max-width: 770px) {
+  section .cards-container .cards {
+    margin-bottom: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 20px 50px 40px;
   }
 }
 
-section ul li::before {
-  counter-increment: number;
-  content: counter(number);
-  background-color: #9356DC;
-  border-radius: 50%;
-  position: absolute;
-  left: 4%;
-  width: 30px;
-  height: 30px;
-  color: white;
-  font-weight: normal;
-  line-height: 30px;
-  /* centrer de manière verticale, c'est pratique */
-}
-
-@media all and (min-width: 1100px) {
-  section ul li::before {
-    position: relative;
-    left: -5%;
-  }
-}
-
-section ul li {
-  background-color: #f2f2f2;
-  margin: 15px 0px;
-  padding-left: 40px;
-  width: 85%;
-  height: 60px;
-  border-radius: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: bold;
-  -webkit-box-shadow: -3px 3px 5px lightgray;
-          box-shadow: -3px 3px 5px lightgray;
-}
-
-@media all and (min-width: 1100px) {
-  section ul li {
-    margin: 10px 20px;
-    padding-left: 10px;
-    width: 50%;
-  }
-}
-
-section ul li:hover {
-  background-color: rgba(147, 86, 220, 0.2);
-}
-
-section ul li:hover span {
-  color: #9356DC;
-}
-
-section ul li span {
-  margin-right: 25px;
-  color: gray;
-}
-
-section ul .arrow {
-  font-size: 1.5em;
-  color: #9356DC;
-  margin: 5px 0;
-}
-
-@media all and (max-width: 770px) {
-  section ul .arrow {
-    margin: 0;
-  }
-}
-
-section .cards {
-  background-color: #f2f2f2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-bottom: 50px;
-  width: 80%;
-  margin: 0 auto 50px;
-  border-radius: 15px;
-}
-
-@media all and (min-width: 1100px) {
-  section .cards {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media all and (max-width: 770px) {
-  section .cards {
-    width: 100%;
-    margin-bottom: 0;
-  }
-}
-
-section .cards h2 {
+section .cards-container .cards h2 {
   display: block;
   width: 80%;
-  text-align: left;
-  margin-left: 0%;
+  text-align: center;
   font-size: 2em;
+  margin: 70px 0px 0px;
 }
 
-@media all and (min-width: 1100px) {
-  section .cards h2 {
-    text-align: center;
-    margin: 20px 0px 0px;
-  }
-}
-
-@media all and (min-width: 700px) {
-  section .cards h2 {
-    text-align: center;
-    margin: 20px auto;
-  }
-}
-
-section .cards_card {
+section .cards-container .cards_card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,13 +371,20 @@ section .cards_card {
   background-color: white;
   -webkit-box-shadow: -3px 3px 5px lightgray;
           box-shadow: -3px 3px 5px lightgray;
-  margin: 15px 0px;
+  margin: 40px 80px;
   width: 350px;
   height: 285px;
   border-radius: 20px;
+  font-size: 1.1em;
 }
 
-section .cards_card_nouveau {
+@media all and (max-width: 770px) {
+  section .cards-container .cards_card {
+    margin: 40px 0px;
+  }
+}
+
+section .cards-container .cards_card_nouveau {
   position: absolute;
   background-color: #99E2D0;
   color: #278870;
@@ -403,13 +395,7 @@ section .cards_card_nouveau {
   border-radius: 5px;
 }
 
-@media all and (min-width: 1100px) {
-  section .cards_card {
-    margin: 40px 80px;
-  }
-}
-
-section .cards_card_img {
+section .cards-container .cards_card_img {
   width: 350px;
   height: 200px;
   -o-object-fit: cover;
@@ -417,12 +403,12 @@ section .cards_card_img {
   border-radius: 20px 20px 0px 0px;
 }
 
-section .cards h3,
-section .cards p {
+section .cards-container .cards h3,
+section .cards-container .cards p {
   text-align: left;
   color: black;
   margin-left: 20px;
-  margin-bottom: -5px;
+  margin-bottom: -10px;
 }
 
 .hover-effect {
@@ -439,7 +425,7 @@ section .cards p {
 footer {
   background-color: rgba(29, 29, 29, 0.781);
   color: white;
-  padding: 1px 0px;
+  padding: 30px 0 10px;
 }
 
 @media all and (min-width: 1201px) and (max-width: 1500px) {
@@ -484,6 +470,7 @@ footer a:hover {
 footer h2 {
   text-align: left;
   margin-left: 10%;
+  font-size: 1.5em;
   font-family: Shrikhand, Arial, Helvetica, sans-serif;
 }
 
@@ -502,6 +489,7 @@ footer h2 {
 footer p {
   text-align: left;
   margin-left: 10%;
+  font-size: 1.1em;
 }
 
 @media all and (min-width: 1201px) and (max-width: 1500px) {

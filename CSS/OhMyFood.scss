@@ -63,6 +63,9 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 /* En tête */
 
@@ -74,27 +77,31 @@ header {
     top: 0%;
     left: 50%;
     transform: translate(-50%);
+    z-index: 5;
     color: white;
     background-color: #222;
     padding: 10px;
     border-radius: 15px;
+    font-size: 3em;
     @include police;
   }
 
   .reserver {
-    background: url(/Images/pexels-elevate-1267320.jpg) no-repeat 20% 40%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url(/Images/pexels-elevate-1267320.jpg) no-repeat 20% 40%;
     background-size: cover;
     border-radius: 0 0 5px 5px;
     padding: 10px 26px 40px;
-    height: 600px;
-    div {
+    height: 100vh;
+    position: relative;
+    .reserver-menu {
       background-color: rgba($color: #222, $alpha: 0.8);
-      max-width: 600px;
+      max-width: 550px;
       border-radius: 15px;
-      margin: 300px auto 0;
+      margin: 550px auto 0;
       padding: 5px 30px 15px;
       h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         padding: 0px 41px;
         color: white;
       }
@@ -103,8 +110,9 @@ header {
         border: none;
         border-radius: 30px;
         background: linear-gradient($third-color, $second-color);
-        width: 200px;
-        height: 40px;
+        font-size: 1.1em;
+        width: 250px;
+        height: 50px;
         color: white;
         box-shadow: -3px 3px 5px rgb(32, 32, 32);
         position: relative;
@@ -124,8 +132,34 @@ header {
 
       p {
         color: white;
-        font-size: 1.1em;
+        font-size: 1.3em;
       }
+    }
+    .custom-shape-divider-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 150px;
+      @include tabletHome {
+        height: 100px;
+      }
+      @include mobileHome {
+        height: 70px;
+      }
+    }
+
+    .custom-shape-divider-bottom .shape-fill {
+      fill: #ffffff;
     }
   }
 }
@@ -136,168 +170,134 @@ section {
   text-align: center;
 
   h2 {
-    text-align: left;
+    text-align: center;
     margin-left: 5%;
-    margin-top: 40px;
+    margin: 50px 0px;
     font-size: 2em;
-    @include ordiMenu {
+    @include mobileHome {
       text-align: center;
-      margin: 20px 0px;
     }
   }
 
-  ul {
-    list-style-type: decimal;
-    counter-reset: number;
+  .list-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin: 0px 0px 40px -20px;
-
-    @include ordiMenu {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+    margin: 20px 0 70px;
+    @include mobileHome {
       flex-direction: column;
-      margin: 20px 50px 40px;
+      margin: 0 0 70px;
     }
-
-    li::before {
-      counter-increment: number;
-      content: counter(number);
-      background-color: $second-color;
-      border-radius: 50%;
-      position: absolute;
-      left: 4%;
-      width: 30px;
-      height: 30px;
-      color: white;
-      font-weight: normal;
-      line-height: 30px; /* centrer de manière verticale, c'est pratique */
-
-      @include ordiMenu {
-        position: relative;
-        left: -5%;
+    .number-container {
+      margin: 0 40px;
+      @include mobileHome {
+        margin: auto;
       }
-    }
-
-    li {
-      background-color: $primary-color;
-      margin: 15px 0px;
-      padding-left: 40px;
-      width: 85%;
-      height: 60px;
-      border-radius: 20px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-weight: bold;
-      box-shadow: -3px 3px 5px lightgray;
-
-      @include ordiMenu {
-        margin: 10px 20px;
-        padding-left: 10px;
-        width: 50%;
+      .number {
+        display: flex;
+        font-size: 3em;
+        color: $second-color;
+        margin-bottom: 0px;
       }
-
-      &:hover {
-        background-color: rgba($second-color, 0.2);
-        span {
-          color: $second-color;
-        }
+      h3 {
+        text-align: left;
+        font-size: 1.5em;
       }
-      span {
-        margin-right: 25px;
-        color: gray;
-      }
-    }
-    .arrow {
-      font-size: 1.5em;
-      color: $second-color;
-      margin: 5px 0;
-      @include tabletHome {
-        margin: 0;
+      p {
+        text-align: left;
+        max-width: 300px;
+        font-size: 1.2em;
       }
     }
   }
 
-  .cards {
-    background-color: $primary-color;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 50px;
-    width: 80%;
-    margin: 0 auto 50px;
-    border-radius: 15px;
-    @include ordiMenu {
+  .cards-container {
+    max-width: 100%;
+    background-color: #f2f2f2;
+    position: relative;
+    .custom-shape-divider-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .custom-shape-divider-top svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 50px;
+    }
+
+    .custom-shape-divider-top .shape-fill {
+      fill: #ffffff;
+    }
+    .cards {
+      display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-    }
-    @include tabletHome {
-      width: 100%;
-      margin-bottom: 0;
-    }
-
-    h2 {
-      display: block;
+      padding-bottom: 50px;
       width: 80%;
-      text-align: left;
-      margin-left: 0%;
-      font-size: 2em;
+      margin: 0 auto;
+      border-radius: 15px;
+      @include tabletHome {
+        margin-bottom: 0;
+        flex-direction: column;
+      }
 
-      @include ordiMenu {
+      h2 {
+        display: block;
+        width: 80%;
         text-align: center;
-        margin: 20px 0px 0px;
+        font-size: 2em;
+        margin: 70px 0px 0px;
       }
-      @include tablet {
-        text-align: center;
-        margin: 20px auto;
-      }
-    }
 
-    &_card {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      background-color: white;
-      box-shadow: -3px 3px 5px lightgray;
-      margin: 15px 0px;
-      width: 350px;
-      height: 285px;
-      border-radius: 20px;
-
-      &_nouveau {
-        position: absolute;
-        background-color: $fourth-color;
-        color: darken($fourth-color, 40%);
-        font-weight: bold;
-        font-size: 1.1em;
-        margin: 20px 250px;
-        padding: 5px;
-        border-radius: 5px;
-      }
-      @include ordiMenu {
+      &_card {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        background-color: white;
+        box-shadow: -3px 3px 5px lightgray;
         margin: 40px 80px;
-      }
-
-      &_img {
         width: 350px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 20px 20px 0px 0px;
-      }
-    }
+        height: 285px;
+        border-radius: 20px;
+        font-size: 1.1em;
+        @include tabletHome {
+          margin: 40px 0px;
+        }
 
-    h3,
-    p {
-      text-align: left;
-      color: black;
-      margin-left: 20px;
-      margin-bottom: -5px;
+        &_nouveau {
+          position: absolute;
+          background-color: $fourth-color;
+          color: darken($fourth-color, 40%);
+          font-weight: bold;
+          font-size: 1.1em;
+          margin: 20px 250px;
+          padding: 5px;
+          border-radius: 5px;
+        }
+
+        &_img {
+          width: 350px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 20px 20px 0px 0px;
+        }
+      }
+
+      h3,
+      p {
+        text-align: left;
+        color: black;
+        margin-left: 20px;
+        margin-bottom: -10px;
+      }
     }
   }
 }
