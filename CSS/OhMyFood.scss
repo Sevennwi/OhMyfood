@@ -79,15 +79,21 @@ header {
     transform: translate(-50%);
     z-index: 5;
     color: white;
-    background-color: #222;
-    padding: 10px;
     border-radius: 15px;
-    font-size: 3em;
+    font-size: 7em;
     @include police;
+    @include tabletHome {
+      font-size: 5em;
+    }
+    @include mobileHome {
+      font-size: 3em;
+      background-color: #222;
+      padding: 15px;
+    }
   }
 
   .reserver {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
       url(/Images/pexels-elevate-1267320.jpg) no-repeat 20% 40%;
     background-size: cover;
     border-radius: 0 0 5px 5px;

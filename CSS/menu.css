@@ -89,6 +89,12 @@ section .cards h2 span {
   margin-left: 90px;
 }
 
+@media all and (max-width: 550px) {
+  section .cards h2 span {
+    margin-left: 40px;
+  }
+}
+
 section .cards h3 {
   display: block;
   width: 80%;
