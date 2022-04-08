@@ -57,10 +57,19 @@ section {
     h2 {
       @include police;
       font-size: 2em;
+      @include mobileX {
+        font-size: 1.8em;
+      }
       span {
         margin-left: 90px;
         @include mobileHome {
           margin-left: 40px;
+        }
+        @include mobileX {
+          margin-left: 20px;
+        }
+        @include mobileSmall {
+          margin-left: 10px;
         }
       }
     }

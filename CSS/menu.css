@@ -85,6 +85,12 @@ section .cards h2 {
   font-size: 2em;
 }
 
+@media all and (max-width: 400px) {
+  section .cards h2 {
+    font-size: 1.8em;
+  }
+}
+
 section .cards h2 span {
   margin-left: 90px;
 }
@@ -92,6 +98,18 @@ section .cards h2 span {
 @media all and (max-width: 550px) {
   section .cards h2 span {
     margin-left: 40px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  section .cards h2 span {
+    margin-left: 20px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  section .cards h2 span {
+    margin-left: 10px;
   }
 }
 
