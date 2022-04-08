@@ -108,6 +108,9 @@ section {
       overflow: hidden;
       animation: menu-anim 400ms both;
       animation-timing-function: ease-in-out;
+      @include mobileSmall {
+        width: 97%;
+      }
 
       &:hover > .cards_card_icon {
         transform: scaleX(1);
@@ -237,7 +240,7 @@ section {
           }
 
           @include mobileX {
-            width: 250px;
+            width: 240px;
           }
         }
 
@@ -270,7 +273,7 @@ section {
         }
 
         @include mobileX {
-          left: 5px;
+          left: -2px;
         }
       }
 

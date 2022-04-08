@@ -157,8 +157,26 @@ header .reserver .reserver-menu {
   background-color: rgba(34, 34, 34, 0.8);
   max-width: 550px;
   border-radius: 15px;
-  margin: 550px auto 0;
+  margin: 530px auto 0;
   padding: 5px 30px 15px;
+}
+
+@media all and (max-width: 770px) {
+  header .reserver .reserver-menu {
+    margin: 430px auto 0;
+  }
+}
+
+@media all and (max-width: 550px) {
+  header .reserver .reserver-menu {
+    margin: 330px auto 0;
+  }
+}
+
+@media all and (max-width: 400px) {
+  header .reserver .reserver-menu {
+    margin: 230px auto 0;
+  }
 }
 
 header .reserver .reserver-menu h2 {
@@ -180,6 +198,13 @@ header .reserver .reserver-menu button {
           box-shadow: -3px 3px 5px #202020;
   position: relative;
   z-index: 1;
+}
+
+@media all and (max-width: 400px) {
+  header .reserver .reserver-menu button {
+    width: auto;
+    padding: 0 10px;
+  }
 }
 
 header .reserver .reserver-menu button:hover {
@@ -225,7 +250,7 @@ header .reserver .custom-shape-divider-bottom svg {
 
 @media all and (max-width: 550px) {
   header .reserver .custom-shape-divider-bottom svg {
-    height: 70px;
+    height: 50px;
   }
 }
 
@@ -363,6 +388,15 @@ section .cards-container .cards {
   }
 }
 
+@media all and (max-width: 400px) {
+  section .cards-container .cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 section .cards-container .cards h2 {
   display: block;
   width: 80%;
@@ -396,6 +430,12 @@ section .cards-container .cards_card {
   }
 }
 
+@media all and (max-width: 400px) {
+  section .cards-container .cards_card {
+    width: auto;
+  }
+}
+
 section .cards-container .cards_card_nouveau {
   position: absolute;
   background-color: #99E2D0;
@@ -407,12 +447,24 @@ section .cards-container .cards_card_nouveau {
   border-radius: 5px;
 }
 
+@media all and (max-width: 400px) {
+  section .cards-container .cards_card_nouveau {
+    margin: 20px 200px;
+  }
+}
+
 section .cards-container .cards_card_img {
   width: 350px;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px 20px 0px 0px;
+}
+
+@media all and (max-width: 400px) {
+  section .cards-container .cards_card_img {
+    width: 300px;
+  }
 }
 
 section .cards-container .cards h3,

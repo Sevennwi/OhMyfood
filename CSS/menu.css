@@ -155,6 +155,12 @@ section .cards_card {
           animation-timing-function: ease-in-out;
 }
 
+@media all and (max-width: 350px) {
+  section .cards_card {
+    width: 97%;
+  }
+}
+
 section .cards_card:hover > .cards_card_icon {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
@@ -348,7 +354,7 @@ section .cards_card_text_description {
 
 @media all and (max-width: 400px) {
   section .cards_card_text_description {
-    width: 250px;
+    width: 240px;
   }
 }
 
@@ -394,7 +400,7 @@ section .cards_card_prix {
 
 @media all and (max-width: 400px) {
   section .cards_card_prix {
-    left: 5px;
+    left: -2px;
   }
 }
 

@@ -72,3 +72,8 @@ body {
         @content;
     }
 }
+@mixin mobileSmall {
+    @media all and (max-width: 350px) {
+        @content;
+    }
+}

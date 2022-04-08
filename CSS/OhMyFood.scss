@@ -104,8 +104,17 @@ header {
       background-color: rgba($color: #222, $alpha: 0.8);
       max-width: 550px;
       border-radius: 15px;
-      margin: 550px auto 0;
+      margin: 530px auto 0;
       padding: 5px 30px 15px;
+      @include tabletHome {
+        margin: 430px auto 0;
+      }
+      @include mobileHome {
+        margin: 330px auto 0;
+      }
+      @include mobileX {
+        margin: 230px auto 0;
+      }
       h2 {
         font-size: 1.8em;
         padding: 0px 41px;
@@ -123,6 +132,10 @@ header {
         box-shadow: -3px 3px 5px rgb(32, 32, 32);
         position: relative;
         z-index: 1;
+        @include mobileX {
+          width: auto;
+          padding: 0 10px;
+        }
         &:hover {
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           background: linear-gradient(
@@ -160,7 +173,7 @@ header {
         height: 100px;
       }
       @include mobileHome {
-        height: 70px;
+        height: 50px;
       }
     }
 
@@ -254,6 +267,9 @@ section {
         margin-bottom: 0;
         flex-direction: column;
       }
+      @include mobileX {
+        flex-direction: row;
+      }
 
       h2 {
         display: block;
@@ -277,6 +293,9 @@ section {
         @include tabletHome {
           margin: 40px 0px;
         }
+        @include mobileX {
+          width: auto;
+        }
 
         &_nouveau {
           position: absolute;
@@ -287,6 +306,9 @@ section {
           margin: 20px 250px;
           padding: 5px;
           border-radius: 5px;
+          @include mobileX {
+            margin: 20px 200px;
+          }
         }
 
         &_img {
@@ -294,6 +316,9 @@ section {
           height: 200px;
           object-fit: cover;
           border-radius: 20px 20px 0px 0px;
+          @include mobileX {
+            width: 300px;
+          }
         }
       }
 
